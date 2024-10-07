@@ -1,0 +1,39 @@
+.hero {
+  background-image: url(./assets/images/hero.jpg);
+  height: 100vh;
+  /* justify-content: center; */
+  color: white;
+}
+
+.overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+}
+
+.hero-b {
+  font-family: Muli, sans-serif;
+  font-size: 12px;
+  line-height: 16.5px;
+  text-align: center;
+  color: #ffffff;
+  background: #ff7236;
+  box-shadow: none;
+  padding: 12px;
+  width: 10%;
+  border: 0;
+  align-items: center;
+}
+
+.hero-c {
+  font-family: Muli, sans-serif;
+  font-size: 12px;
+  line-height: 16.5px;
+  text-align: center;
+  color: black;
+  background: white;
+  box-shadow: none;
+  padding: 12px;
+  width: 10%;
+  border: 0;
+}
