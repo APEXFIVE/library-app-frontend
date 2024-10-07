@@ -5,6 +5,8 @@ import './App.css'
 import BookList from './pages/bookList'
 import AddBook from './pages/addBook'
 import BookDetails from './pages/bookDetails'
+import Login from './pages/form/login'
+import Reg from './pages/form/reg'
 
 function App() {
   const router = createBrowserRouter([
