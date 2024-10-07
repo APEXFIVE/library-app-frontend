@@ -21,6 +21,14 @@ function App() {
    {
     path: "/books/:id",
     element: <BookDetails />
+   },
+   {
+    path: "/form",
+    element: <Login />
+   },
+   {
+    path: "/register",
+    element: <Reg />
    }
   ]);
  
