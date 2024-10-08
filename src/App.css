@@ -1,7 +1,6 @@
 .hero {
   background-image: url(./assets/images/hero.jpg);
   height: 100vh;
-  /* justify-content: center; */
   color: white;
 }
 
@@ -22,8 +21,12 @@
   padding: 12px;
   width: 10%;
   border: 0;
-  margin-left: ;
+  margin-left: 530px;
+  /* opacity: 0.6;
+  transition: 0.3s; */
 }
+
+/* .hero-b :hover {opacity: 1} */
 
 .hero-c {
   font-family: Muli, sans-serif;
@@ -36,4 +39,24 @@
   padding: 12px;
   width: 10%;
   border: 0;
+  margin-left: 10px;
+}
+
+.book-form {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  margin-bottom: 20px;
+}
+
+.book-form label {
+  flex-basis: 48%;
+}
+
+.book-form input,
+.book-form select,
+.book-form textarea {
+  flex-basis: 48%;
+  margin-bottom: 15px;
+  padding: 8px;
 }
