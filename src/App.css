@@ -10,7 +10,7 @@ margin: 0;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  position: fixed;
+  /* position: fixed; */
 }
 
 .overlay {

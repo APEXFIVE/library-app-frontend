@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const BookFilterBox = () => {
   const [keyword, setKeyword] = useState("");
@@ -70,7 +72,7 @@ const BookFilterBox = () => {
               type="submit"
               className="w-full p-2 bg-orange-500 text-white hover:bg-orange-600 focus:outline-none"
             >
-              Search
+             <Link to='/books/:id'> Search </Link>
             </button>
           </div>
         </form>
