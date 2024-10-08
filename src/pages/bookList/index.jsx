@@ -1,13 +1,15 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Hero from "./components/Hero";
+import Search from "./components/Search"
 
 const BookList = () => {
     return (
         <div>
             <Navbar />
-            <div>Booklist goes here</div>
+        
             <Hero />
+           <Search/>
             <Footer />
         </div>
 
