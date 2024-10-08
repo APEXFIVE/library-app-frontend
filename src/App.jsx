@@ -7,6 +7,8 @@ import AddBook from './pages/addBook'
 import BookDetails from './pages/bookDetails'
 import Login from './pages/form/Login'
 import Reg from './pages/form/Reg'
+import EditBook from './pages/form/EditBook'
+import Fav from './pages/form/Fav'
 
 
 function App() {
@@ -30,6 +32,14 @@ function App() {
    {
     path: "/register",
     element: <Reg />
+   },
+   {
+    path: "/edit",
+    element: <EditBook />
+   },
+   {
+    path: "/fav",
+    element: <Fav />
    }
   ]);
  

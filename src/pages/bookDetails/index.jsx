@@ -1,6 +1,5 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import Hero from "../bookList/components/Hero";
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
@@ -18,7 +17,9 @@ const BookDetails = () => {
   if (!book) return <div>Book not found</div>;
 
   return (
-     <div className="p-4">
+     <div>
+        <Navbar />
+        <div className="p-4">
             <h1 className="text-2xl font-bold">{book.title}</h1>
             <p className="mb-4">{book.author}</p>
             <Link to={`/books/edit/${book.id}`} className="bg-blue-500 text-white py-2 px-4 rounded">
@@ -28,6 +29,8 @@ const BookDetails = () => {
                 Back to List
             </Link>
         </div>
+        <Footer />
+     </div>
   )
 }
 

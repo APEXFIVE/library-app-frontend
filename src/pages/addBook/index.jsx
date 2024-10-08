@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 
 
@@ -39,7 +40,7 @@ const AddBook = () => {
     return (
         <div>
             <Navbar />
-        <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto p-4 bg-white shadow-md rounded-md bg-img">
+        <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto p-4 bg-white shadow-md rounded-md ">
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Title</label>
         <input
@@ -123,7 +124,7 @@ const AddBook = () => {
         type="submit"
         className="w-full bg-[#ff7236] text-white font-bold py-2 px-4 rounded hover:bg-[#ff0000]"
       >
-        Add Book
+        <Link to='/fav'> Add Book</Link>
       </button>
     </form>
     <Footer />
