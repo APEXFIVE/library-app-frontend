@@ -6,7 +6,7 @@ import BookList from './pages/bookList'
 import AddBook from './pages/addBook'
 import BookDetails from './pages/bookDetails'
 import Login from './pages/form/Login'
-import Reg from './pages/form/reg'
+import Reg from './pages/form/Reg'
 
 
 function App() {
