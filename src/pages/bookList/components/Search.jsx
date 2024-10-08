@@ -55,7 +55,7 @@ const BookFilterBox = () => {
               onChange={(e) => setCategory(e.target.value)}
               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
             >
-              <option value="all"> Categories</option>
+              <option value="all"> Genre</option>
               <option value="mystery">Mystery</option>
               <option value="romance">Romance</option>
               <option value="science-fiction">Science Fiction</option>
