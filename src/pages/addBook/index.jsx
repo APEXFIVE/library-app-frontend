@@ -39,7 +39,7 @@ const AddBook = () => {
     return (
         <div>
             <Navbar />
-        <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto p-4 bg-white shadow-md rounded-md bg-[url('./')]">
+        <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto p-4 bg-white shadow-md rounded-md bg-img">
       <div className="mb-4">
         <label htmlFor="title" className="block text-gray-700 font-bold mb-2">Title</label>
         <input
