@@ -6,7 +6,6 @@ const BookList = () => {
     return (
         <div>
             <Navbar />
-            <div>Booklist goes here</div>
             <Hero />
             <Footer />
         </div>

@@ -1,13 +1,16 @@
 .hero {
-  background-image: url(./assets/images/hero.jpg);
+  background-image: url(./assets/images/header-slide.jpg);
   height: 100vh;
   color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
 }
 
 .overlay {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  
+
 }
 
 .hero-b {
