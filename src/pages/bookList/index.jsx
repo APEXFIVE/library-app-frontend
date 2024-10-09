@@ -6,17 +6,18 @@ import Search from "./components/Search";
 import Authors from "../../components/Authors";
 
 const BookList = () => {
-  return (
-    <div>
-     <div> <Navbar /></div>
+    return (
+        <div>
+            <div> <Navbar /></div>
 
-     <div> <Hero /></div>
+            <div> <Hero /></div>
 
-     <div> <Search /></div>
-     <div><Authors/></div>
-     <div><Footer /></div>
-    </div>
-  );
+            <div> <Search /></div>
+            <div><Release /></div>
+            <div><Authors /></div>
+            <div><Footer /></div>
+        </div>
+    );
 };
 
 export default BookList;
