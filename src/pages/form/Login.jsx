@@ -1,6 +1,7 @@
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faEnvelope, faO } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 const LoginForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -87,7 +88,7 @@ const LoginForm = () => {
         <p className="mt-6 text-center text-gray-600 text-sm">
           Don't have an account?{" "}
           <a href="#" className="text-orange-600 hover:underline">
-            Sign up
+           <Link to='/register'>Sign up</Link> 
           </a>
         </p>
       </div>

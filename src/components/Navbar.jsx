@@ -5,6 +5,12 @@ import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons/faPhoneFlip";
 import { faEnvelope, faO } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+
+
+
+
+
 const NavbarWithTopBar = () => {
   // State to handle dropdown visibility
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +49,8 @@ const NavbarWithTopBar = () => {
                   icon={faLock}
                   className="text-orange-600 mr-1"
                 />
-                Login/Register
+                <Link to='/register'>Login/Register </Link>
+                
               </a>
               <FontAwesomeIcon
                 icon={faCartShopping}
@@ -185,7 +192,7 @@ const NavbarWithTopBar = () => {
                 href="#"
                 className="block px-4 py-2 hover:bg-gray-800 border-b border-gray-700"
               >
-                News&Events
+                Books&Media
               </a>
               <a
                 href="#"

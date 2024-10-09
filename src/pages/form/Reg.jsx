@@ -1,6 +1,7 @@
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faEnvelope, faO } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 
 
@@ -14,19 +15,32 @@ const LoginForm = () => {
         {/* Login Form */}
         <form>
          {/* name input */}
-         <div>
-          <label htmlFor=""> First Name</label>
-          <input type="first-name"
-          id="name"
-          placeholder="Enter your First Name" />
-          
-          <label htmlFor=""> Last Name</label>
-          <input type="first-name"
-          id="name"
-          placeholder="Enter your First Name" />
+         
+         <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+             
+              First Name
+            </label>
+            <input
+              type="name"
+              id="name"
+              placeholder="Enter your first name"
+              className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500" required 
+            />
+          </div>
 
-         </div>
-
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+             
+              Last name
+            </label>
+            <input
+              type="name"
+              id="name"
+              placeholder="Enter your last name"
+              className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:border-blue-500" required 
+            />
+          </div>
 
 
           {/* Email Input */}
@@ -78,7 +92,7 @@ const LoginForm = () => {
               type="submit"
               className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-black-600 focus:outline-none focus:bg-black-600"
             >
-              Login
+              Sign Up
             </button>
           </div>
         </form>
@@ -96,7 +110,7 @@ const LoginForm = () => {
             type="button"
             className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-900 focus:outline-none focus:bg-gray-900 mb-4"
           >
-            Sign in with Google
+            Sign up with Google
           </button>
 
           
@@ -104,9 +118,10 @@ const LoginForm = () => {
 
         {/* Sign-up Link */}
         <p className="mt-6 text-center text-gray-600 text-sm">
-          Don't have an account?{" "}
+          Already have an account?{" "}
           <a href="#" className="text-orange-600 hover:underline">
-            Sign up
+           
+          <Link to='/form'>Login </Link>
           </a>
         </p>
       </div>
