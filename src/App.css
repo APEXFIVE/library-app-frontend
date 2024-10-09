@@ -10,7 +10,6 @@ margin: 0;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  /* position: fixed; */
   background-position: center;
 }
 
@@ -32,11 +31,8 @@ margin: 0;
   width: 10%;
   border: 0;
   margin-left: 530px;
-  /* opacity: 0.6;
-  transition: 0.3s; */
 }
 
-/* .hero-b :hover {opacity: 1} */
 
 .hero-c {
   font-family: Muli, sans-serif;
@@ -55,7 +51,6 @@ margin: 0;
 .book-form {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   margin-bottom: 20px;
 }
 
@@ -70,3 +65,36 @@ margin: 0;
   margin-bottom: 15px;
   padding: 8px;
 }
+
+.img {
+  background-image: url(./assets/images/form.jpg);
+  width: 50vw;
+}
+
+.edit {
+  background-image: url(./assets/images/form.jpg);
+  height: 100vh;
+}
+
+.real-img {
+  display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+padding-top: 20px;
+}
+
+.release-section {
+  background-image: url(./assets/images/hero2.jpg);
+  height: 120vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20PX;
+}
+.overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+

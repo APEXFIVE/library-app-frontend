@@ -1,5 +1,6 @@
 
-
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import BookList from './pages/bookList'

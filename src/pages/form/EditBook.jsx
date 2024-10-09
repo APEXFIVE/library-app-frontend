@@ -19,7 +19,8 @@ const EditBook = () => {
   return (
     <div>
         <Navbar />
-        <form onSubmit={handleSubmit} className="p-4">
+        <div className='edit'>
+        <form onSubmit={handleSubmit} className="p-4 pt-52 w-6/12 mx-80 shadow-transparent">
             <h1 className="text-2xl font-bold mb-4">Edit Book</h1>
             <input
                 type="text"
@@ -37,8 +38,9 @@ const EditBook = () => {
                 className="border p-2 mb-4 w-full"
                 required
             />
-            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded">Update Book</button>
+            <button type="submit" className="bg-[#ff7236] text-white py-2 px-4 rounded">Update Book</button>
         </form>
+        </div>
         <Footer />
     </div>
   )
