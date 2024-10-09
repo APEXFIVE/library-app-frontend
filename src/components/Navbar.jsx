@@ -24,7 +24,7 @@ const NavbarWithTopBar = () => {
     <header>
       {/* Top Bar */}
       <div className=" bg-gray-900 text-white py-4 px-0  ">
-        <div className="  flex justify-evenly ml-[250px] gap-[40px}">
+        <div className="  flex justify-evenly ml-[250px] gap-[40px]">
         {/* <div className="  flex items-start ml-[250px] gap-10"> */}
           <div className=" flex mx-auto space-x-4 items-center border-b-2 py-4 ">
             <span className="text-sm">

@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import Release from "../../components/Release";
 import Hero from "./components/Hero";
 import Search from "./components/Search";
 import Authors from "../../components/Authors";
