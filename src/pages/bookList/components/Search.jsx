@@ -62,6 +62,7 @@ const BookFilterBox = () => {
               <option value="romance">Romance</option>
               <option value="science-fiction">Science Fiction</option>
               <option value="fantasy">Fantasy</option>
+              <option value="fantasy">Religious books</option>
             
             </select>
           </div>

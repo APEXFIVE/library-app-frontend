@@ -4,6 +4,7 @@ import image from "../assets/images/team3.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+
 const Authors = () => {
   return (
     <section className="py-12 bg-gray-100">
