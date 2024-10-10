@@ -1,37 +1,52 @@
+import axios from "axios";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { BASE_URL } from "../../constants";
 
 
 
 const BookDetails = () => {
-  const { id } = useParams();
-  const books = [
-      { id: 1, title: '1984', author: 'George Orwell' },
-      { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
-      { id: 3, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
-  ];
-  const book = books.find(b => b.id === parseInt(id));
+    const params = useParams()
+    console.log(params)
+    const bookId = params.Id
+    const [bookDetail, setBookDetail] = useState([]);
 
-  if (!book) return <div>Book not found</div>;
+    useEffect(() => {
+        const getBooks = async () => {
+            const response = await axios.get(`${BASE_URL}/books/${bookId}`);
+            setBookDetail(response.data)
+            console.log(bookDetail)
+        };
+        getBooks();
 
-  return (
-     <div>
+    }, [])
+    //   const books = [
+    //       { id: 1, title: '1984', author: 'George Orwell' },
+    //       { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+    //       { id: 3, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+    //   ];
+    const book = books.find(b => b.id === parseInt(id));
+
+
+    return <div >
         <Navbar />
-        <div className="p-4">
-            <h1 className="text-2xl font-bold">{book.title}</h1>
-            <p className="mb-4">{book.author}</p>
-            <Link to={`/books/edit/${book.id}`} className="bg-blue-500 text-white py-2 px-4 rounded">
-                Edit
-            </Link>
-            <Link to="/" className="ml-4 bg-gray-500 text-white py-2 px-4 rounded">
-                Back to List
-            </Link>
+        <div>
+            <div className="border p-4 hover:shadow-lg transition-shadow duration-300"> <img src={book.cover} alt="" /></div>
+            <div className="border p-4 hover:shadow-lg transition-shadow duration-300 bg-orange-300">
+                <h1 className="font-bold text-2xl text-center ">{book.title}</h1>
+                <h1 className=" text-2xl text-center mt-4" >{book.summary}</h1>
+                <h1 className=" text-2xl text-center mt-4">{book?.author?.name}</h1>
+                <h1 className=" text-2xl text-center mt-4 font-bold">{book.publishedYear}</h1>
+                <h1 className=" text-2xl text-center mt-4">{book.genre}</h1>
+            </div>
         </div>
+
+
         <Footer />
-     </div>
-  )
-}
+    </div>;
+
+};
 
 export default BookDetails;

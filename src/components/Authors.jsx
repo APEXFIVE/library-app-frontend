@@ -7,7 +7,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Authors = () => {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-100 mt-20">
       <div className="container mx-auto text-center mb-8">
         <h2 className="text-3xl font-bold">Meet the Authors</h2>
       </div>

@@ -10,7 +10,7 @@ const BookList = () => {
         <div>
             <div> <Navbar /></div>
 
-            <div> <Hero /></div>
+            <div>   <Hero /></div>
 
             <div> <Search /></div>
             <div><Release /></div>

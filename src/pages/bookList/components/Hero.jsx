@@ -16,7 +16,7 @@ const Hero = () => {
     return (
         <section className="hero">
             <div className="overlay">
-                <Slider {...settings}>
+                {/* <Slider {...settings}> */}
                     {/* Slide 1 */}
                     <div className="flex justify-center items-center flex-col">
                         <h3 className="text-center pt-48 text-3xl w-3/4 ml-8">
@@ -31,7 +31,7 @@ const Hero = () => {
                     </div>
 
                     {/* Slide 2 */}
-                    <div className="flex justify-center items-center flex-col ml-32">
+                    {/* <div className="flex justify-center items-center flex-col ml-32">
                         <h3 className="text-center pt-48 text-3xl w-3/4">
                             Learn at Your Own Pace
                         </h3>
@@ -41,10 +41,10 @@ const Hero = () => {
                         <p className="text-center text-2xl w-3/4 mt-3 mb-5 ml-32">
                             Our platform offers a variety of courses to help you achieve your goals, wherever you are.
                         </p>
-                    </div>
+                    </div> */}
 
                     {/* Slide 3 */}
-                    <div className="flex justify-center items-center flex-col ml-32">
+                    {/* <div className="flex justify-center items-center flex-col ml-32">
                         <h3 className="text-center pt-48 text-3xl w-3/4 ml-32">
                             Gain Knowledge & Skills
                         </h3>
@@ -54,8 +54,8 @@ const Hero = () => {
                         <p className="text-center text-2xl w-3/4 mt-3 mb-5 ml-32">
                             Our lessons are designed for both beginners and experts, providing a learning path for everyone. 
                         </p>
-                    </div>
-                </Slider>
+                    </div> */}
+                {/* </Slider> */}
                 <button className="hero-b ">READ MORE</button> <button className="hero-c">BORROW</button>
             </div>
         </section >

@@ -2,10 +2,14 @@ import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faEnvelope, faO } from '@fortawesome/free-solid-svg-icons';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 const LoginForm = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+    <div>
+      <Navbar />
+      <div className=" login min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full backdrop-sepia-0 bg-white/30">
         {/* Form Title */}
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
         
@@ -60,7 +64,8 @@ const LoginForm = () => {
               type="submit"
               className="w-full bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-black-600 focus:outline-none focus:bg-black-600"
             >
-              Login
+              <Link to='/'>Login</Link>
+              
             </button>
           </div>
         </form>
@@ -92,6 +97,8 @@ const LoginForm = () => {
           </a>
         </p>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };
