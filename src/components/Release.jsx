@@ -28,7 +28,7 @@ const Release = () => {
                     <button className='w-[140px] p-2 bg-[#3e3e3e] text-white hover:bg-[#ea580c] focus:outline-none'>MAGAZINES</button>
                 </div>
 
-                <div className='real-img'>
+                <div className='real-img mb-6'>
                     <img src={image} alt="image" />
                     <img src={image1} alt="image" />
                     <img src={image2} alt="image" />
@@ -37,8 +37,9 @@ const Release = () => {
                     <img src={image5} alt="image" />
                     <img src={image6} alt="image " />
                     <img src={image7} alt="image" />
+                    <button className= 'w-[140px] p-2 bg-[#ea580c] text-white hover:bg-[#3e3e3e] focus:outline-none flex items-center'>VIEW MORE</button>
                 </div>
-                <button className= 'w-[140px] p-2 bg-[#3e3e3e] text-white hover:bg-[#ea580c] focus:outline-none'>VIEW MORE</button>
+              
 
                 </div>
 

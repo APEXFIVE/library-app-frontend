@@ -10,6 +10,7 @@ import Login from './pages/form/Login'
 import Reg from './pages/form/Reg'
 import EditBook from './pages/form/EditBook'
 import Fav from './pages/form/Fav'
+import SaveBook from './pages/addBook/SaveBook'
 
 
 function App() {
@@ -41,6 +42,10 @@ function App() {
    {
     path: "/fav",
     element: <Fav />
+   },
+   {
+    path: "/book-list",
+    element: <SaveBook />
    }
   ]);
  

@@ -17,9 +17,9 @@ const Fav = () => {
   return (
    <div>
     <Navbar />
-     <div className="p-4">
+     <div className="fav p-4">
     <h1 className="text-2xl font-bold mb-4">Favorite</h1>
-    <Link to="/add-new" className="mb-4 inline-block bg-green-500 text-white py-2 px-4 rounded">
+    <Link to="" className="mb-4 inline-block bg-green-500 text-white py-2 px-4 rounded">
         Add New Book
     </Link>
     <ul className="space-y-4">
