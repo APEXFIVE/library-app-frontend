@@ -22,9 +22,9 @@ const Hero = () => {
                         <h3 className="text-center pt-48 text-3xl w-3/4 ml-8">
                             Online Learning Anytime, Anywhere!
                         </h3>
-                        <h1 className="text-center text-6xl text-[#ff7236] font-semibold w-3/4 mt-3 ml-10">
+                       <marquee behavior="" direction=""><h1 className="text-center text-6xl text-[#ff7236] font-semibold w-3/4 mt-3 ml-10">
                             Discover Your Roots
-                        </h1>
+                        </h1></marquee> 
                         <p className="text-center text-2xl w-3/4 mt-3 mb-5 ml-8">
                         There is more treasure in books than in all the pirate's loot on Treasure Island.
                         </p>

@@ -10,43 +10,42 @@ import { BASE_URL } from "../../constants";
 const BookDetails = () => {
     const params = useParams()
     console.log(params)
-    const bookId = params.Id
-    const [bookDetail, setBookDetail] = useState([]);
+    const bookId = params.id
+    const [bookDetail, setBookDetail] = useState({});
+
+    const getBooks = async () => {
+        const response = await axios.get(`${BASE_URL}/books/${bookId}`);
+        setBookDetail(response.data)
+        console.log(bookDetail)
+    };
 
     useEffect(() => {
-        const getBooks = async () => {
-            const response = await axios.get(`${BASE_URL}/books/${bookId}`);
-            setBookDetail(response.data)
-            console.log(bookDetail)
-        };
         getBooks();
-
     }, [])
-    //   const books = [
-    //       { id: 1, title: '1984', author: 'George Orwell' },
-    //       { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee' },
-    //       { id: 3, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
-    //   ];
-    const book = books.find(b => b.id === parseInt(id));
 
 
-    return <div >
-        <Navbar />
-        <div>
-            <div className="border p-4 hover:shadow-lg transition-shadow duration-300"> <img src={book.cover} alt="" /></div>
-            <div className="border p-4 hover:shadow-lg transition-shadow duration-300 bg-orange-300">
-                <h1 className="font-bold text-2xl text-center ">{book.title}</h1>
-                <h1 className=" text-2xl text-center mt-4" >{book.summary}</h1>
-                <h1 className=" text-2xl text-center mt-4">{book?.author?.name}</h1>
-                <h1 className=" text-2xl text-center mt-4 font-bold">{book.publishedYear}</h1>
-                <h1 className=" text-2xl text-center mt-4">{book.genre}</h1>
+    return (
+        <div >
+            <Navbar />
+            <div className="single-book">
+                <div className="border p-4 hover:shadow-lg transition-shadow duration-300  items-center">
+                    <img src={bookDetail.cover} alt="" className="h-96 w-64 mx-[500px]"/>
+                    <div className="border p-4 hover:shadow-lg transition-shadow duration-300 bg-orange-300 w-64 mx-[500px] mt-6">
+                        <h1 className="font-bold text-2xl text-center ">{bookDetail.title}</h1>
+                        <h1 className=" text-2xl text-center mt-4" >{bookDetail.summary}</h1>
+                        <h1 className=" text-2xl text-center mt-4">{bookDetail?.author?.name}</h1>
+                        <h1 className=" text-2xl text-center mt-4 font-bold">{bookDetail.publishedYear}</h1>
+                        <h1 className=" text-2xl text-center mt-4">{bookDetail.genre}</h1>
+                    </div>
+                    <button className="hero-b mt-4 font-bold text-xl w ">DELETE</button>
+                    <Link to='/edit'><button className="hero-c mt-4 font-bold text-xl">EDIT</button></Link> 
+                </div>
+
+
+                <Footer />
             </div>
         </div>
-
-
-        <Footer />
-    </div>;
-
+    )
 };
 
 export default BookDetails;
