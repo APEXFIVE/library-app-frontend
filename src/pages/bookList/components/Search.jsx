@@ -1,53 +1,66 @@
-
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../../constants";
+
 const Search = () => {
   const [title, setTitle] = useState("");
-  // const [authors, setAuthors] = useState([]);
   const [publishedYear, setPublishedYear] = useState("");
+  const [books, setBooks] = useState([]);
+  const [authors, setAuthors] = useState([]);
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const [selectedAuthor, setSelectedAuthor] = useState(""); // Store selected author
 
+  // Fetch books and authors from API
+  const getBooks = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/books`);
+      setBooks(response.data);
+    } catch (error) {
+      console.error("Error fetching books:", error);
+    }
+  };
 
+  const getAuthors = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/authors`);
+      if (Array.isArray(response.data)) {
+        setAuthors(response.data); // Ensure it's an array before setting state
+      } else {
+        console.error("Authors data is not an array:", response.data);
+        setAuthors([]); // Set to empty array if response is invalid
+      }
+    } catch (error) {
+      console.error("Error fetching authors:", error);
+      setAuthors([]); // Handle error by setting an empty array
+    }
+  };
+
+  useEffect(() => {
+    getBooks();
+    getAuthors();
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    alert(`Book Not Found: ${title} ${authors} ${publishedYear} `);
-    // Handle the search logic here (e.g., send search data to an API or filter books)
-    console.log("Searching for:", { title, authors, publishedYear });
+
+    // Filter books by title, author, and year
+    const results = books.filter((book) => {
+      const matchesTitle = title ? book.title.toLowerCase().includes(title.toLowerCase()) : true;
+      const matchesAuthor = selectedAuthor ? book.author === selectedAuthor : true; // Check selected author
+      const matchesYear = publishedYear ? book.publishedYear === publishedYear : true;
+
+      return matchesTitle && matchesAuthor && matchesYear;
+    });
+
+    if (results.length === 0) {
+      alert(`Book Not Found: ${title}, ${publishedYear}`);
+    } else {
+      setFilteredBooks(results);
+    }
   };
-
-  const [books, setBooks] = useState([]);
-
-    const getBooks= async () =>{
-        const response = await axios.get(`${BASE_URL}/books`);
-        setBooks (response.data)
-    };
-
-    useEffect(()=>{
-        getBooks();
-    },[]);
-
-    {books.map ((book)=> {
-        return <option key={book._id} value={book._id}>{book.title}</option>
-       }) }
-
-
-       const [authors, setAuthors] = useState ([]);
-
-       const getAuthors =async () => {
-         const response = await axios.get(`${BASE_URL}/authors`);
-         setAuthors (response.data)
-       }
-         
-       useEffect( () => {
-         getAuthors();
-       }, []);
 
   return (
     <div className="flex justify-center items-center py-8">
-      
       <div className="-mt-28 border box-border p-10 w-full max-w-screen-md shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-white">
         {/* Heading */}
         <h2 className="text-center text-xl font-semibold mb-9">
@@ -61,29 +74,29 @@ const Search = () => {
             <input
               type="text"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}juk
+              onChange={(e) => setTitle(e.target.value)}
               placeholder="Search by title..."
               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
             />
           </div>
-        
-        
+
           {/* Search by Author */}
           <div className="col-span-1">
             <select
-               id="author"
-          name="author"
-
               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
+              onChange={(e) => setSelectedAuthor(e.target.value)} // Set selected author
+              value={selectedAuthor} // Bind to state
             >
-             {authors.map ((author)=> {
-          return <option key={author._id} value={author._id}>{author.name}</option>
-         }) }
-             
+              <option value="">Select Author</option>
+              {authors.map((author) => (
+                <option key={author._id} value={author._id}>
+                  {author.name}
+                </option>
+              ))}
             </select>
           </div>
-        
-          {/* Search by title */}
+
+          {/* Search by Published Year */}
           <div className="col-span-1">
             <input
               type="text"
@@ -94,104 +107,34 @@ const Search = () => {
             />
           </div>
 
-         
-
           {/* Search Button */}
           <div className="col-span-1">
             <button
               type="submit"
               className="w-full p-2 bg-orange-500 text-white hover:bg-orange-600 focus:outline-none"
             >
-             <Link to='/book-list'> Search </Link>
+              Search
             </button>
           </div>
         </form>
+
+        {/* Display search results */}
+        <div className="mt-6">
+          {filteredBooks.length > 0 ? (
+            <ul>
+              {filteredBooks.map((book) => (
+                <li key={book._id}>
+                  {book.title} by {authors.find((author) => author._id === book.author)?.name}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>No results found.</p>
+          )}
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Search;
-
-
-// const BookFilterBox = () => {
-//   const [keyword, setKeyword] = useState("");
-//   const [catalogue, setCatalogue] = useState("all");
-//   const [category, setCategory] = useState("all");
-
-  // const handleSearch = (e) => {
-  //   e.preventDefault();
-  //   // Handle the search logic here (e.g., send search data to an API or filter books)
-  //   console.log("Searching for:", { keyword, catalogue, category });
-  // };
-
-//   return (
-//     <div className="flex justify-center items-center py-8">
-      
-//       <div className="-mt-28 border box-border p-10 w-full max-w-screen-md shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-white">
-//         {/* Heading */}
-//         <h2 className="text-center text-xl font-semibold mb-9">
-//           What are you looking for in the library?
-//         </h2>
-
-//         {/* Filter Box Form */}
-//         <form onSubmit={handleSearch} className="grid gap-4 grid-cols-1 md:grid-cols-4">
-//           {/* Search by Keyword */}
-//           <div className="col-span-1">
-//             <input
-//               type="text"
-//               value={keyword}
-//               onChange={(e) => setKeyword(e.target.value)}
-//               placeholder="Search by keyword..."
-//               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
-//             />
-//           </div>
-
-//           {/* Search the Catalogue Dropdown */}
-//           <div className="col-span-1">
-//             <select
-//               value={catalogue}
-//               onChange={(e) => setCatalogue(e.target.value)}
-//               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
-//             >
-//               <option value="all"> Catalogues</option>
-//               <option value="fiction">Fiction</option>
-//               <option value="non-fiction">Non-Fiction</option>
-//               <option value="academic">Academic</option>
-             
-//             </select>
-//           </div>
-
-//           {/* Filter by Category Dropdown */}
-//           <div className="col-span-1">
-//             <select
-//               value={category}
-//               onChange={(e) => setCategory(e.target.value)}
-//               className="w-full p-2 border border-gray-400 focus:outline-none focus:border-orange-600"
-//             >
-//               <option value="all"> Genre</option>
-//               <option value="mystery">Mystery</option>
-//               <option value="romance">Romance</option>
-//               <option value="science-fiction">Science Fiction</option>
-//               <option value="fantasy">Fantasy</option>
-//               <option value="fantasy">Religious books</option>
-            
-//             </select>
-//           </div>
-
-//           {/* Search Button */}
-//           <div className="col-span-1">
-//             <button
-//               type="submit"
-//               className="w-full p-2 bg-orange-500 text-white hover:bg-orange-600 focus:outline-none"
-//             >
-//              <Link to='/books/:id'> Search </Link>
-//             </button>
-//           </div>
-//         </form>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default BookFilterBox;

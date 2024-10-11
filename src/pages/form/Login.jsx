@@ -93,7 +93,7 @@ const LoginForm = () => {
         <p className="mt-6 text-center text-gray-600 text-sm">
           Don't have an account?{" "}
           <a href="#" className="text-orange-600 hover:underline">
-           <Link to='/register'>Sign up</Link> 
+           <Link to='/'>Sign up</Link> 
           </a>
         </p>
       </div>

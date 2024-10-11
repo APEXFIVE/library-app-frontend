@@ -52,10 +52,11 @@ const Navbar = () => {
                 <Link to='/register'>Login/Register </Link>
 
               </NavLink>
+              <Link to='/fav'>
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className=" text-orange-600"
-              />
+              /></Link>
               <FontAwesomeIcon icon={faO} className="text-orange-600" />
             </div>
           </div>
@@ -72,9 +73,12 @@ const Navbar = () => {
 
           <div className="hidden md:flex space-x-6 relative border-b-2 border-gray-400">
             <div className="group relative">
+
+              <Link to='/'>
               <NavLink className="hover:text-gray-300">
-                Home
+              <Link to='/'>  HOME </Link>
               </NavLink>
+              </Link>
               {/* Dropdown Menu */}
               <div className="hidden group-hover:block absolute bg-white text-gray-800 rounded shadow-lg mt-2">
                 <NavLink
@@ -93,22 +97,9 @@ const Navbar = () => {
 
             <div className="group relative">
               <NavLink className="hover:text-gray-300">
-                Books&Media
+              <Link to='/book-list'> BOOKS&MEDIA</Link> 
               </NavLink>
-              {/* Dropdown Menu */}
-              <div className="hidden group-hover:block absolute bg-white text-gray-800 rounded shadow-lg mt-2">
-                <NavLink
-                  className="block px-4 py-2 text-sm hover:bg-gray-100"
-                >
-                  Categories
-                </NavLink>
-
-                <NavLink
-                  className="block px-4 py-2 text-sm hover:bg-gray-100"
-                >
-                  Images
-                </NavLink>
-              </div>
+             
             </div>
 
             <NavLink className="hover:text-gray-300">
@@ -125,7 +116,7 @@ const Navbar = () => {
             </div>
 
             <NavLink className="hover:text-gray-300">
-              PAGES
+             <Link to='/add-new'> LIBRARIAN </Link>
             </NavLink>
             {/* Dropdown Menu */}
             <div className="hidden group-hover:block absolute bg-white text-gray-800 rounded shadow-lg mt-2">
@@ -201,7 +192,7 @@ const Navbar = () => {
               <NavLink
                 className="block px-4 py-2 hover:bg-gray-800 border-b border-gray-700"
               >
-                Pages
+                Librarian
               </NavLink>
 
 

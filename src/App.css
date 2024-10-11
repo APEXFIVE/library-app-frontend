@@ -149,6 +149,7 @@ padding-top: 20px;
   grid-column-gap: 10px;
   grid-row: 10px;
   box-shadow: 10px 10px 5px #2D2013;
+  margin-bottom: 100px;
 }
 
 .books-img {
@@ -156,4 +157,14 @@ padding-top: 20px;
   height: 50%;
   transform: translate(-120px);
 
+}
+
+.single-book {
+  background-image: url(./assets/images/form.jpg);
+  height: 180vh;
+}
+
+.save-book {
+  background-image: url(./assets/images/form.jpg);
+  height: 100vh;
 }

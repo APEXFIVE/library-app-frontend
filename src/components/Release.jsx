@@ -9,7 +9,8 @@ import image7 from '../assets/images/bk8.jpg'
 const Release = () => {
     return (
         <section className='release-section'>
-            <div className='overlay'>
+           <div className='overlay w-[100%]'>
+           <div>
                 <div className='text-center pt-9 text-white'>
                     <h1 className='text-4xl font-bold'>Check Out The New Releases</h1>
                     <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested</p>
@@ -37,12 +38,13 @@ const Release = () => {
                     <img src={image5} alt="image" />
                     <img src={image6} alt="image " />
                     <img src={image7} alt="image" />
-                    <button className= 'w-[140px] p-2 bg-[#ea580c] text-white hover:bg-[#3e3e3e] focus:outline-none flex items-center'>VIEW MORE</button>
+                    {/* <button className= 'w-[140px] p-2 bg-[#ea580c] text-white hover:bg-[#3e3e3e] focus:outline-none mt-5 ml-[100px]'>VIEW MORE</button> */}
                 </div>
               
 
                 </div>
 
+           </div>
         </section>
 
 
